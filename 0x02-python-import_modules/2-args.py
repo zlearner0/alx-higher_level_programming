@@ -2,15 +2,13 @@
 if __name__ == "__main__":
     from sys import argv
 
-    if len(argv) == 1:
+    argc = len(argv) - 1
+
+    if argc == 0:
         print("0 arguments.")
-    elif len(argv) == 2:
-        args = argv[1:]
-        print("{:d} argument:".format(len(args)))
-        for item, val in enumerate(args, start=1):
-            print("{:d}: {}".format(item, val))
+    elif argc == 1:
+        print("1 argument:")
     else:
-        args = argv[1:]
-        print("{:d} arguments:".format(len(args)))
-        for item, val in enumerate(args, start=1):
-            print("{:d}: {}".format(item, val))
+        print("{:d} arguments:".format(argc))
+    for item in range(argc):
+        print("{:d}: {}".format(item + 1, argv[item + 1]))
