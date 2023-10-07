@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 def print_reversed_list_integer(my_list=[]):
     '''print list elements in reverse order'''
-    if not my_list:
+    if my_list == 0:
         return None
     my_list.reverse()
     for item in my_list:
