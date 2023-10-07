@@ -7,5 +7,5 @@ def print_matrix_integer(matrix=[[]]):
         if len(small_list) == 0:
             print()
         for i in small_list:
-            print("{:d} ".format(i), end=" " if small_list.index(
+            print("{:d}".format(i), end=" " if small_list.index(
                 i) < len(small_list) - 1 else "\n")
