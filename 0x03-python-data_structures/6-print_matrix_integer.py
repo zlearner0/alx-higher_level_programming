@@ -1,11 +1,13 @@
 #!/usr/bin/python3
-def print_matrix_integer(matrix=[[]]):
-    '''print list elements separately'''
-    if not matrix:
-        return None
-    for small_list in matrix:
-        if len(small_list) == 0:
-            print()
-        for i in small_list:
-            print("{:d}".format(i), end=" " if small_list.index(
-                i) < len(small_list) - 1 else "\n")
+def add_tuple(tuple_a=(), tuple_b=()):
+    '''adding 2 tuples elements'''
+    a1 = tuple_a[0] if len(tuple_a) >= 1 else 0
+    b1 = tuple_b[0] if len(tuple_b) >= 1 else 0
+
+    a2 = tuple_a[1] if len(tuple_a) > 1 else 0
+    b2 = tuple_b[1] if len(tuple_b) > 1 else 0
+
+    sum1 = a1 + b1
+    sum2 = a2 + b2
+
+    return (sum1, sum2)
