@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 def print_matrix_integer(matrix=[[]]):
     '''print list elements separately'''
-    if matrix is None:
-        print("")
+    if not matrix:
+        return None
     else:
         for small_list in matrix:
             for i in small_list:
