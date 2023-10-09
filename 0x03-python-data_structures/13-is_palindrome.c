@@ -9,26 +9,25 @@
 int is_palindrome(listint_t **head)
 {
 int range, i = 0;
-listint_t *current = *head;
+listint_t *current = *head;   
 int count = 0;
 while (current)
 {
 count++;
 current = current->next;
-}
-if (!count || !current)
-return (1);
+}   
+if (!count)
+return (1);   
 int *arr = malloc(sizeof(int) * count);
 if (!arr)
-return (0);
+return (0);   
 current = *head;
 while (current)
 {
 arr[i] = current->n;
 i++;
 current = current->next;
-}
-for (i = 0; i < count; i++)
+}   
 range = count / 2;
 i = 0;
 while (i < range)
