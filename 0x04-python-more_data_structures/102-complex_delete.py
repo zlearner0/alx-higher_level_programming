@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 def complex_delete(a_dictionary, value):
     '''delete element by value'''
-    if (not a_dictionary):
+    if (a_dictionary is None):
         return None
     keys_list = []
     for key, item in a_dictionary.items():
@@ -10,3 +10,4 @@ def complex_delete(a_dictionary, value):
 
     for key in keys_list:
         del a_dictionary[key]
+    return a_dictionary
