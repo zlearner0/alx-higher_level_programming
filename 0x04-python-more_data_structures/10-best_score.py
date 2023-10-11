@@ -3,8 +3,8 @@
 
 def best_score(a_dictionary):
     '''give max value of a dictionary'''
-    if (max(a_dictionary.values()) is None):
-        return None
     if (a_dictionary is None):
         return None
-    return max(a_dictionary.values())
+    for key, val in a_dictionary.items():
+        if max(a_dictionary.values()) == val:
+            return key
