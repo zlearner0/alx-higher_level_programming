@@ -1,8 +1,10 @@
 #!/usr/bin/python3
 def search_replace(my_list, search, replace):
     '''returns a list with replaced elements'''
-    if (not my_list):
+    if (my_list == None):
         return None
+    if (my_list == []):
+        return []
     new_list = []
     for item in my_list:
         if item == search:
