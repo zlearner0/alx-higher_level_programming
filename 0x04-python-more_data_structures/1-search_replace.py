@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 def search_replace(my_list, search, replace):
     '''returns a list with replaced elements'''
-    if (my_list == None):
+    if (my_list is None):
         return None
     if (my_list == []):
         return []
