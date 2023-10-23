@@ -13,7 +13,7 @@ def list_division(my_list_1, my_list_2, list_length):
             print("out of range")
             result = 0
             my_list.append(result)
-            break
+            continue
         except TypeError:  # different data type
             print("wrong type")
             result = 0
