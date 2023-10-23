@@ -4,16 +4,12 @@
 def safe_print_list_integers(my_list=[], x=0):
     j = 0
     i = 0
-    while (j != x):
-
+    while i < x:
         try:
-            print("{:d}".format(my_list[j]), end="")
-            i += 1
+            print("{:d}".format(my_list[i]), end="")
+            j += 1
         except (ValueError, TypeError):
             pass
-        except IndexError:
-            break
-        j += 1
-
+        i += 1
     print()
-    return i
+    return j
