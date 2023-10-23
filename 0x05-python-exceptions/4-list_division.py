@@ -2,27 +2,28 @@
 
 
 def list_division(my_list_1, my_list_2, list_length):
-    result = []
-    for i in range(list_length):
+    i = 0
+    result = 0
+    my_list = []
+    while i != list_length:
         try:
-            quotient = 0
-            if i < len(my_list_1) and i < len(my_list_2):
-                dividend = my_list_1[i]
-                divisor = my_list_2[i]
-                if isinstance(dividend, (int, float)) and isinstance(
-                        divisor, (int, float)):
-                    if divisor != 0:
-                        quotient = dividend / divisor
-                    else:
-                        print("division by 0")
-                else:
-                    print("wrong type")
-            else:
-                print("out of range")
-            result.append(quotient)
+            result = my_list_1[i] / my_list_2[i]
+
+        except IndexError:
+            print("out of range")
+            result = 0
+            break
+        except TypeError:  # different data type
+            print("wrong type")
+            result = 0
         except ZeroDivisionError:
             print("division by 0")
+            result = 0
+        except ValueError:
+            result = 0
         finally:
-            pass
-    return result
+            my_list.append(result)
 
+        i += 1
+
+    return my_list
