@@ -1,4 +1,13 @@
+#!/usr/bin/python3
+"""
+This is the documentation for the module 100-singly_linked_list.py.
+"""
+
 class Node:
+    """
+    This is the documentation for the Square class.
+    It represents a square shape with a given size.
+    """
     def __init__(self, data, next_node=None):
         self.data = data
         self.next_node = next_node
