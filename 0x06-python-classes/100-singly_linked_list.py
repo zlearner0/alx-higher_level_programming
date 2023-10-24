@@ -3,8 +3,6 @@
 This is the documentation for the module 100-singly_linked_list.py.
 """
 
-from typing import Type
-
 
 class Node:
     """
