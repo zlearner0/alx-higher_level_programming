@@ -3,6 +3,7 @@
 This is the documentation for the module 102-square.py.
 """
 
+
 class Square:
     """
     This class defines a square.
@@ -85,7 +86,7 @@ class Square:
             other (Square): The other square to compare.
 
         Returns:
-            True if this square has a smaller area than the other square. False otherwise.
+            True if square has smaller area than the other square
         """
         return self.area() < other.area()
 
@@ -97,19 +98,19 @@ class Square:
             other (Square): The other square to compare.
 
         Returns:
-            True if this square has a smaller or equal area than the other square. False otherwise.
+            True if square has smaller area than the other square
         """
         return self.area() <= other.area()
 
     def __gt__(self, other):
         """
-        Checks whether this square is greater than another square.
+        Checks whether square is greater than another square.
 
         Args:
             other (Square): The other square to compare.
 
         Returns:
-            True if this square has a greater area than the other square. False otherwise.
+            True square has greater area than the other square
         """
         return self.area() > other.area()
 
@@ -121,6 +122,6 @@ class Square:
             other (Square): The other square to compare.
 
         Returns:
-            True if this square has a greater or equal area than the other square. False otherwise.
+            True if square has greater area than the other square
         """
         return self.area() >= other.area()
