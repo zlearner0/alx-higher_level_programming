@@ -4,6 +4,7 @@
 This is the documentation for the module 101-magic_class.py.
 """
 
+
 class Square:
     """
     This class defines a square.
@@ -14,7 +15,7 @@ class Square:
 
         Args:
             size (int): The size of the square.
-            position (tuple): The position of the square as a tuple of 2 integers.
+            position (tuple): of 2 integers.
         """
         self.size = size
         self.position = position
@@ -69,8 +70,15 @@ class Square:
             TypeError: if value is not a tuple of 2 integers.
             ValueError: if value contains negative integers.
         """
-        if not isinstance(value, tuple) or len(value) != 2 or not isinstance(value[0], int) or not isinstance(value[1], int) or value[0] < 0 or value[1] < 0:
+        if not isinstance(value, tuple) or len(value) != 2:
             raise TypeError('position must be a tuple of 2 positive integers')
+
+        if not isinstance(value[0], int):
+            raise TypeError('position must be a tuple of 2 positive integers')
+
+        if not isinstance(value[1], int) or value[0] < 0 or value[1] < 0:
+            raise TypeError('position must be a tuple of 2 positive integers')
+
         self.__position = value
 
     def area(self):
@@ -84,7 +92,7 @@ class Square:
 
     def my_print(self):
         """
-        Prints the square to stdout with the '#' character using the position attribute.
+        Prints the square to stdout with the '#'
         """
         if self.__size == 0:
             print()
