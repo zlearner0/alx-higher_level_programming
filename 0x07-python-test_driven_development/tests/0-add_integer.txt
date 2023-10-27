@@ -1,0 +1,106 @@
+import function:
+
+    >>> add_integer = __import__("0-add_integer").add_integer
+
+add two postive integers:
+
+    >>> add_integer(1, 2)
+    3
+
+add negative and positive numbers:
+
+    >>> add_integer(-2, 2)
+    0
+
+add negative and negative numbers:
+
+    >>> add_integer(-2, -2)
+    -4
+
+add first integer and skit second number:
+
+    >>> add_integer(2)
+    100
+
+add two postive floats:
+
+    >>> add_integer(1.33, 2.54)
+    3
+
+add two negative floats:
+
+    >>> add_integer(-1.33, -2.54)
+    -3
+
+add positive and negative floats:
+
+    >>> add_integer(1.33, -2.54)
+    -1
+
+add 1 argument floats:
+
+    >>> add_integer(1.33)
+    99
+
+add first integer and string:
+
+    >>> add_integer(1, "text")
+    Traceback (most recent call last):
+    ...
+    TypeError: b must be an integer
+
+add first as string and integer:
+
+    >>> add_integer("text", 2)
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+
+add first string only:
+
+    >>> add_integer("text")
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+
+add two strings:
+
+    >>> add_integer("text1", "text2")
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+
+add first as None and integer:
+
+    >>> add_integer(None, 2)
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+
+add two None:
+
+    >>> add_integer(None, None)
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+
+add 2 infinities:
+
+    >>> add_integer(float('inf'), float('-inf'))
+    Traceback (most recent call last):
+    ...
+    OverflowError: cannot convert float infinity to integer
+
+add nan to integer:
+
+    >>> add_integer(float('nan'), 5)
+    Traceback (most recent call last):
+    ...
+    ValueError: cannot convert float NaN to integer
+
+use in blank for first argument
+
+    >>> add_integer(, 100)
+    Traceback (most recent call last):
+    ...
+    SyntaxError: invalid syntax

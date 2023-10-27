@@ -1,0 +1,62 @@
+import module:
+    >>> say_my_name = __import__("3-say_my_name").say_my_name
+
+test arguments:
+    >>> say_my_name()
+    Traceback (most recent call last):
+    ...
+    TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+
+test arguments:
+    >>> say_my_name(None,)
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string
+
+test arguments:
+    >>> say_my_name(anyName,)
+    Traceback (most recent call last):
+    ...
+    NameError: name 'anyName' is not defined
+
+test float:
+    >>> say_my_name(float('inf'),)
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string
+
+test int:
+    >>> say_my_name(12,15)
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string
+
+test arguments:
+    >>> say_my_name([],15)
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string
+
+test empty string:
+    >>> say_my_name("","")
+    My name is  
+
+test space string:
+    >>> say_my_name(" "," ")
+    My name is    
+
+test first empty string:
+    >>> say_my_name("",)
+    My name is  
+
+test first string:
+    >>> say_my_name("john",)
+    My name is john 
+
+test first empty string:
+    >>> say_my_name("john","smith")
+    My name is john smith
+
+test first empty string:
+    >>> say_my_name("j/ohn","smith")
+    My name is j/ohn smith
