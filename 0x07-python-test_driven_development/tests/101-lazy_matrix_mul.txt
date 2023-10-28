@@ -1,0 +1,66 @@
+
+import module function:
+>>> lazy_matrix_mul = __import__('101-lazy_matrix_mul').lazy_matrix_mul
+
+test int:
+>>> print(lazy_matrix_mul([[2, 2], [3, 3]], [[1, 1], [4, 4]]))
+[[10 10]
+ [15 15]]
+
+test float:
+>>> print(lazy_matrix_mul([[2.2, 2.2], [-3.2, 3.2]], [[-1.1, 1.1], [4.4, 4.4]]))
+[[ 7.26 12.1 ]
+ [17.6  10.56]]
+
+test empty matrices:
+>>> print(lazy_matrix_mul([], []))
+0.0
+
+test string:
+>>> try:
+...     print(lazy_matrix_mul([[2, 2]], [[3, 3], [3, "string"]]))
+... except Exception as err:
+...     print(err)
+invalid data type for einsum
+
+test wrong dimension:
+>>> try:
+...     print(lazy_matrix_mul([[2], [2]], [[3, 3], [4, 4]]))
+... except Exception as err:
+...     print(err)
+shapes (2,1) and (2,2) not aligned: 1 (dim 1) != 2 (dim 0)
+
+test None arg:
+>>> try:
+...     print(lazy_matrix_mul(None, None))
+... except Exception as err:
+...     print(err)
+Object arrays are not currently supported
+
+test None with matrix arg:
+>>> try:
+...     print(lazy_matrix_mul([[2, 2]], [None]))
+... except Exception as err:
+...     print(err)
+Object arrays are not currently supported
+
+test empty with matrix arg:
+>>> try:
+...     print(lazy_matrix_mul([[2, 2], [2, 2]], [[]]))
+... except Exception as err:
+...     print(err)
+shapes (2,2) and (1,0) not aligned: 2 (dim 1) != 1 (dim 0)
+
+test 1 missing arg:
+>>> try:
+...     print(lazy_matrix_mul([[2, 2]], ))
+... except Exception as err:
+...     print(err)
+lazy_matrix_mul() missing 1 required positional argument: 'm_b'
+
+test missing all arg:
+>>> try:
+...     print(lazy_matrix_mul())
+... except Exception as err:
+...     print(err)
+lazy_matrix_mul() missing 2 required positional arguments: 'm_a' and 'm_b'
