@@ -1,0 +1,66 @@
+
+import module function:
+>>> matrix_mul = __import__('100-matrix_mul').matrix_mul
+
+test int:
+>>> print(matrix_mul([[2, 2], [3, 3]], [[1, 1], [4, 4]]))
+[[10, 10], [15, 15]]
+
+test float:
+>>> print(matrix_mul([[2.2, 2.2], [-3.2, 3.2]], [[-1.1, 1.1], [4.4, 4.4]]))
+[[7.260000000000002, 12.100000000000001], [17.6, 10.560000000000002]]
+
+test empty matrices:
+>>> print(matrix_mul([], []))
+Traceback (most recent call last):
+...
+ValueError: m_a can't be empty
+
+test string:
+>>> try:
+...     print(matrix_mul([[2, 2]], [[3, 3], [3, "string"]]))
+... except Exception as err:
+...     print(err)
+m_b should contain only integers or floats
+
+test wrong dimension:
+>>> try:
+...     print(matrix_mul([[2], [2]], [[3, 3], [4, 4]]))
+... except Exception as err:
+...     print(err)
+m_a and m_b can't be multiplied
+
+test None arg:
+>>> try:
+...     print(matrix_mul(None, None))
+... except Exception as err:
+...     print(err)
+m_a must be a list
+
+test None with matrix arg:
+>>> try:
+...     print(matrix_mul([[2, 2]], [None]))
+... except Exception as err:
+...     print(err)
+m_b must be a list of lists
+
+test empty with matrix arg:
+>>> try:
+...     print(matrix_mul([[2, 2], [2, 2]], [[]]))
+... except Exception as err:
+...     print(err)
+m_b can't be empty
+
+test 1 missing arg:
+>>> try:
+...     print(matrix_mul([[2, 2]], ))
+... except Exception as err:
+...     print(err)
+matrix_mul() missing 1 required positional argument: 'm_b'
+
+test missing all arg:
+>>> try:
+...     print(matrix_mul())
+... except Exception as err:
+...     print(err)
+matrix_mul() missing 2 required positional arguments: 'm_a' and 'm_b'
