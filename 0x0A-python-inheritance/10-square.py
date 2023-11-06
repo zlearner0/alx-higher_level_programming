@@ -2,7 +2,7 @@
 '''this is documentation for module contains class BaseGeometry has methods
 '''
 
-BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
 Rectangle = __import__('9-rectangle').Rectangle
 
 
@@ -11,8 +11,9 @@ class Square(Rectangle):
 
     def __init__(self, size):
         '''inistantiate the square object'''
-        self.integer_validator('width', size)
+        self.integer_validator('size', size)
         self.__size = size
+        super().__init__(size, size)
 
     def area(self):
         '''update the area for the square'''
