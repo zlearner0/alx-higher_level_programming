@@ -40,14 +40,14 @@ class test_Base(unittest.TestCase):
         '''test to transform from rectangle object to json string'''
         r1 = Rectangle(10, 7, 2, 8)
         dictionary = r1.to_dictionary()
-        json_dictionary = Base.to_json_string([dictionary])
+        jsn_d = Base.to_json_string([dictionary])
 
         self.assertEqual(
             dictionary, {'id': 1, 'width': 10, 'height': 7, 'x': 2, 'y': 8})
         self.assertEqual(type(dictionary), dict)
         self.assertEqual(
-            json_dictionary, '[{"id": 1, "width": 10, "height": 7, "x": 2, "y": 8}]')
-        self.assertEqual(type(json_dictionary), str)
+            jsn_d, '[{"id": 1, "width": 10, "height": 7, "x": 2, "y": 8}]')
+        self.assertEqual(type(jsn_d), str)
 
     # task 15
 
