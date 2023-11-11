@@ -1,10 +1,11 @@
 #!/usr/bin/python3
 '''this module contains class Rectangle'''
 
-# from base import Base
-# Base = __import__('base').Base
-
 from models.base import Base
+
+# from base import Base
+
+# Base = __import__('base').Base
 
 
 class Rectangle(Base):
@@ -89,10 +90,10 @@ class Rectangle(Base):
         '''string representation for rectangle class'''
         clsnm = type(self).__name__
         id = self.id
-        x = self.__x
-        y = self.__y
-        width = self.__width
-        height = self.__height
+        x = self.x
+        y = self.y
+        width = self.width
+        height = self.height
         if clsnm == 'Rectangle':
             return '[{}] ({}) {}/{} - {}/{}'.format(clsnm, id, x, y, width,
                                                     height)

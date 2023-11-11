@@ -1,10 +1,11 @@
 #!/usr/bin/python3
 '''this module contains class Square'''
 
+from models.rectangle import Rectangle
 
 # from rectangle import Rectangle
+
 # Rectangle = __import__('rectangle').Rectangle
-from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
